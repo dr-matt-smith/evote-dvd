@@ -1,0 +1,17 @@
+body {
+	background: #CCFFCC;
+}
+
+header {
+    text-align: center;
+}
+
+/* ------- DVD table contents --------- */
+table, th, td, tr {
+    border: solid black 0.1rem
+}
+
+td {
+    width: 7rem;
+    text-align: center;
+}

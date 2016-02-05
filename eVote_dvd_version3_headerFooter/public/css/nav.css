@@ -1,0 +1,35 @@
+/* ------- nav ------- */
+nav ul {
+    display: flex;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    flex: 1;
+}
+
+nav a {
+    display: block;
+
+    border: 0.5rem solid lime;
+    padding: 0.2rem;
+
+    background: aqua;
+    text-align: center;
+
+    color: black;
+    text-decoration:none;
+}
+
+nav a:hover {
+    text-decoration:underline;
+}
+
+nav a.current_page {
+    color: white;
+    background: green;
+    text-decoration:none;
+}
