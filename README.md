@@ -9,13 +9,16 @@ into an authenticated modern MVC website
 
 Manifest
 -------------------------------------------------------
-\eVote_dvd_version0_html
+```\eVote_dvd_version0_html```
+
 basic flat HTML verson of the website
 
-\eVote_dvd_version1_php
+```\eVote_dvd_version1_php```
+
 just changed the .html files to end in .php
 
-\eVote_dvd_version2_frontController
+```\eVote_dvd_version2_frontController```
+
 created folder 'public' to contain public files (css,images etc.) 
 and a single 'front controller' index.php file
 which bases its action on the GET pamater 'action'
