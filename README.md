@@ -10,24 +10,24 @@ into an authenticated modern MVC website
 Manifest
 -------------------------------------------------------
 
-```
-\eVote_dvd_version0_html
-```
 <hr>
+```
+\eVote_dvd_version00_html
+```
 
 basic flat HTML verson of the website
 
-```
-\eVote_dvd_version1_php
-```
 <hr>
+```
+\eVote_dvd_version01_php
+```
 
 just changed the ```.html``` files to end in ```.php```
 
-```
-\eVote_dvd_version2_frontController
-```
 <hr>
+```
+\eVote_dvd_version02_frontController
+```
 
 The following refactoring:
 
@@ -39,10 +39,10 @@ The following refactoring:
 
 * use of ```require_once``` is used to build the appropriate HTML text content for the GET action
 
-```
-\eVote_dvd_version3_headerFooter
-```
 <hr>
+```
+\eVote_dvd_version03_headerFooter
+```
 
 First attempt to move HTML code that is repeated on every page into separate ```.inc.php``` files:
 
@@ -63,10 +63,10 @@ The following refactoring:
 * each page template finally outputs ```footer.inc.php``` file contents via a ```require_once``` statement
 
 
-```
-\eVote_dvd_version4_titleInHeader
-```
 <hr>
+```
+\eVote_dvd_version04_titleInHeader
+```
 
 Combination of ```header1.inc.php``` and ```header2.inc.php``` into a single template, which also has the HTML ```<title>``` elemement. This is achieved by the controller action function defining a PHP variable ```$title```, whose value is output in the HTML title using the PHP short output tags, e.g.:
 
@@ -81,11 +81,11 @@ So each pages template now just does the following:
 * declares template text for its page-specific content 
 * each page template finally outputs ```footer.inc.php``` file contents via a ```require_once``` statement
 
+<hr>
 
 ```
-\eVote_dvd_version5_navStyle
+\eVote_dvd_version05_navStyle
 ```
-<hr>
 
 Improvement to move duplicated navigation code into an includable file ```nav.inc.php``` file.
 What is different for each page in the navigation code block is the link to have the CSS style ```current_page```. The refactoring to reduce code duplication is to define 5 PHP variables (one for each navbar link: about / contact / index / list / sitemap).

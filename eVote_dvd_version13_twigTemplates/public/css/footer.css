@@ -1,0 +1,8 @@
+footer {
+    background-color: grey;
+    border-top: 0.5rem black solid;
+    border-bottom: 0.5rem black solid;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    text-align: right;
+}
