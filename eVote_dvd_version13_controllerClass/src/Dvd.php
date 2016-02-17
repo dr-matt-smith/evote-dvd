@@ -1,4 +1,5 @@
 <?php
+namespace Itb;
 
 /**
  * Created by PhpStorm.

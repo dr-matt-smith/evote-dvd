@@ -54,20 +54,10 @@ class Dvd
     private $numVotes;
 
     /**
-     * @var string
-     */
-    private $imageFile;
-
-    /**
-     * @var string
-     */
-    private $altText;
-
-    /**
      * Dvd constructor.
      * @param $id
      */
-    public function __construct($id, $title, $category, $price, $voteAverage, $numVotes, $imageFile, $altText)
+    public function __construct($id, $title, $category, $price, $voteAverage, $numVotes)
     {
         $this->id = $id;
         $this->title = $title;
@@ -75,8 +65,6 @@ class Dvd
         $this->price = $price;
         $this->voteAverage = $voteAverage;
         $this->numVotes = $numVotes;
-        $this->imageFile = $imageFile;
-        $this->altText = $altText;
     }
 
     /**

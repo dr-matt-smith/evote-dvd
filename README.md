@@ -139,6 +139,34 @@ Finally, the navigation HTMl block in ```nav.inc.php``` outputs the navlink styl
 
     etc.
 
+<hr>
+```
+\eVote_dvd_version06_htaccess
+```
+
+We can simplify the URL that is used, by asking the Apache web server to 'rewrite' the URL, prefixing ```index.php``` to the beginning of each request that cannot be resolved. I.e, if an existing file or directory is requested (e.g. style.css or images/) then that will be served. But if a file or directory cannot be found that corresponds to a request then we can ask Apache to previx ```indxex.php``` to the beginnning, and then process the request. Since we have an ```index.php``` file, we know that all requests will be processed.
+
+Note, this is the beginning of moving towards meangingful, human-readble URLs that relate to the 'action' the user is requesting, and NOT a direct correspondance to a script file on the server. E.g. if a user wants to see the news item with ID=123, the URL might be ```/news/123```. To do this we need to have a 'routing' subsystem (perhaps we'll do that in a later step). But at this stage we can simplify things to have a URL of ```?action=list``` rather than ```index.php?action=list```. 
+
+Apache looks for the special file ```.htaccess``` for any rules to be executed before processing the request and deciding which script to run etc.
+
+File ```public/.htaccess``` contains the following:
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule (.+) index.php?p=$1 [QSA,L]
+    </IfModule>
+
+This file can be thought of as stating the following:
+
+* turn on URL re-writing
+* if a file cannot be found to match the URL, go to the next rule
+* if a directory cannot be found to match the URL, go to the next rule
+* prefix ```index.php``` to the beginning of the request (if it isn't already present)
+
+
 
 Author
 -------------------------------------------------------

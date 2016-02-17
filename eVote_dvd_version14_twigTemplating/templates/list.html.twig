@@ -1,0 +1,47 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}List DVDs page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block listLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<!-- start table for displaying DVD details -->
+<h2>Lists of DVDs and their average votes</h2>
+
+<table>
+    <tr>
+        <th> ID </th>
+        <th> title </th>
+        <th> category </th>
+        <th> price </th>
+        <th> vote average </th>
+        <th> num votes </th>
+        <th> stars </th>
+    </tr>
+
+    <!-- ********************* HTML for dvd items ****************** -->
+<!--
+    //   	0 - 15 - 40 - 55 - 70 - 85 - 100 %age
+    // 	      .5   1    2    3    4    5     stars
+-->
+
+{% for dvd in dvds %}
+    <tr>
+        <td>{{ dvd.id }}</td>
+        <td>{{ dvd.title }}</td>
+        <td>{{ dvd.category }}</td>
+        <td>&euro; {{ dvd.price }}</td>
+        <td>{{ dvd.voteAverage }} %</td>
+        <td>{{ dvd.numVotes }}</td>
+
+        {# have to use 'raw' filter, since we WANT the HTML codes to be HTML and no just characters #}
+        <td>{{ dvd.starImageHTML | raw}}</td>
+    </tr>{% endfor %}
+
+</table>
+
+{% endblock %}
