@@ -100,23 +100,13 @@ class Dvd
         return $this->numVotes;
     }
 
-    public function getImageFile()
-    {
-        return $this->imageFile;
-    }
-
-    public function getAltText()
-    {
-        return $this->altText;
-    }
-
     /**
      * function will exit with first return
      * so conditions ordered strongest test first, down to weakest test ...
      *
      * @return string
      */
-    public function getStarimageHTML()
+    public function getStarImageHTML()
     {
         if ($this->numVotes < 1){
             return '(no votes yet)';
