@@ -885,7 +885,7 @@ The only template that has a bit more work to do is for the list of DVDs. So our
 \eVote_dvd_version14_twigInclude
 ```
 
-Having HTML output logic built into our Dvd class is not a good idea. So let's move the logic from DVD.getStarImageHTML() into a Twig template. Since we'll be using this logic for EACH Dvd object, we'll put the logic into a separate Twig template, which can be repeatedly 'included', once for each Dvd.
+Having HTML output logic built into our Dvd class is not a good idea. So let's move the logic from ```DVD.getStarImageHTML()``` into a Twig template. Since we'll be using this logic for EACH Dvd object, we'll put the logic into a separate Twig template, which can be repeatedly 'included', once for each Dvd.
 
 So our list Twig template ```templates/list.html.twig``` now looks as follows:
 
@@ -907,7 +907,7 @@ So our list Twig template ```templates/list.html.twig``` now looks as follows:
     
 As we can see above, for the last HTML table cell content we are 'including' our partial Twig template named ```_starImage.html.twig```. Also, to make the logic easier, we are passing to this included template the ```numVotes``` and ```voteAverage``` of the current Dvd object, naming these parameters simply ```numVotes``` and ```voteAverage```. We so this making use of the ```with {<paramlist>}``` construct that can be part of a Twig include.
 
-The contents of template ```templates/_starImage.html.twig``` is quite straightforward, it is the same *logic* as we had in the Dvd.getStarImageHTML()``` method, just recoded into Twig statements. Note that since there is no equivalent of a 'return' statement in Twig, we've have to build quite a long ```if-elseif-...-else-endif``` statement block. But the logic is still straightforward to understand:
+The contents of template ```templates/_starImage.html.twig``` is quite straightforward, it is the same *logic* as we had in the ```Dvd.getStarImageHTML()``` method, just recoded into Twig statements. Note that since there is no equivalent of a 'return' statement in Twig, we've have to build quite a long ```if-elseif-...-else-endif``` statement block. But the logic is still straightforward to understand:
 
     {% if numVotes < 1 %}
         (no votes yet)
