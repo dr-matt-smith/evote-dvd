@@ -308,9 +308,9 @@ In directory ```/src``` create a new file ```Dvd.php``` to hold our new class:
     
 Note, in order for function ```listAction()``` in ```mainController.php``` to be able to work with our class, we need to add a ```require_once``` statement for the PHP class declaration to be read by the PHP interpreter:
 
-    // in: src/mainController.php
-    
-    require_once __DIR__ . '/../src/Dvd.php';
+    // in: src/mainController.php    
+    require_once __DIR__ . '/Dvd.php';
+
 
 In the class we will declare private properties for each Dvd object property:
 

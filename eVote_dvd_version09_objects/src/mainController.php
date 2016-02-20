@@ -1,7 +1,7 @@
 <?php
 // read in our Dvd class declaration
 
-require_once __DIR__ . '/../src/Dvd.php';
+require_once __DIR__ . '/Dvd.php';
 
 function aboutAction()
 {
