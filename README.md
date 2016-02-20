@@ -443,7 +443,7 @@ That ```if``` statement in our loop is a bit annoying, since we want to keep out
     }
     ?>
 
-The solution is to move the logic about what to display based on the number of votes as a method class ```/src/Dvd.php```:
+One solution is to move the logic about what to display based on the number of votes as a method class ```/src/Dvd.php```:
 
         public function getStarImageHTML()
         {
@@ -496,6 +496,7 @@ Now our template output code is much simpler in ```/templates/list.php```, since
         }
     ?>
 
+NOTE - this isn't ideal, since we have VIEW logic encoded into our class - we can fix this later with a Twig sub-template I think...
 
 <hr>
 ```
@@ -878,6 +879,53 @@ The only template that has a bit more work to do is for the list of DVDs. So our
     </table>
     
     {% endblock %}
+
+<hr>
+```
+\eVote_dvd_version14_twigInclude
+```
+
+Having HTML output logic built into our Dvd class is not a good idea. So let's move the logic from DVD.getStarImageHTML() into a Twig template. Since we'll be using this logic for EACH Dvd object, we'll put the logic into a separate Twig template, which can be repeatedly 'included', once for each Dvd.
+
+So our list Twig template ```templates/list.html.twig``` now looks as follows:
+
+    {% for dvd in dvds %}
+        <tr>
+            <td>{{ dvd.id }}</td>
+            <td>{{ dvd.title }}</td>
+            <td>{{ dvd.category }}</td>
+            <td>&euro; {{ dvd.price }}</td>
+            <td>{{ dvd.voteAverage }} %</td>
+            <td>{{ dvd.numVotes }}</td>
+    
+            <td>
+                {% include '_starImage.html.twig' with {'numVotes':dvd.numVotes, 'voteAverage':dvd.voteAverage} %}
+            </td>
+    
+        </tr>
+    {% endfor %}
+    
+As we can see above, for the last HTML table cell content we are 'including' our partial Twig template named ```_starImage.html.twig```. Also, to make the logic easier, we are passing to this included template the ```numVotes``` and ```voteAverage``` of the current Dvd object, naming these parameters simply ```numVotes``` and ```voteAverage```. We so this making use of the ```with {<paramlist>}``` construct that can be part of a Twig include.
+
+The contents of template ```templates/_starImage.html.twig``` is quite straightforward, it is the same *logic* as we had in the Dvd.getStarImageHTML()``` method, just recoded into Twig statements. Note that since there is no equivalent of a 'return' statement in Twig, we've have to build quite a long ```if-elseif-...-else-endif``` statement block. But the logic is still straightforward to understand:
+
+    {% if numVotes < 1 %}
+        (no votes yet)
+    {% endif %}
+    
+    {% if voteAverage > 80 %}
+        <img src="images/stars5.png" alt="five starts star">
+    {% elseif voteAverage > 60 %}
+        <img src="images/stars4.png" alt="four star">
+    {% elseif voteAverage > 45 %}
+        <img src="images/stars3.png" alt="three star">
+    {% elseif voteAverage > 25 %}
+        <img src="images/stars2.png" alt="two star">
+    {% elseif voteAverage > 10 %}
+        <img src="images/stars1.png" alt="one star">
+    {% elseif voteAverage > 0 %}
+        <img src="images/starsHalf.png" alt="half star">
+    {% endif %}
 
 
 
