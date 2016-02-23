@@ -1,0 +1,24 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Sitemap page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block sitemapLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<h1>
+    Site Map
+</h1>
+
+<ul>
+    <li><a href="index.html.twig">Home</a>
+    <li><a href="about.html.twig">About us</a>
+    <li><a href="list.html.twig">DVD ratings</a>
+    <li><a href="contact.html.twig">Contact us</a>
+    <li><a href="sitemap.html.twig">Site Map</a>
+</ul>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{
+  "autoload":{
+    "psr-4":{
+      "Itb\\":"src/"
+    }
+  },
+  "require": {
+    "silex/silex": "2.0.*@dev",
+    "silex/web-profiler": "~2.0@dev",
+    "symfony/var-dumper": "^3.0",
+    "monolog/monolog": "^1.17",
+    "symfony/monolog-bridge": "^3.0"
+  }
+}

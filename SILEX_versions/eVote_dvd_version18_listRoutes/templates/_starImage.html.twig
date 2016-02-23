@@ -1,0 +1,21 @@
+{# ------------------------ #}
+{# logic to decide which HTML star image / alt to display #}
+{# ------------------------ #}
+
+{% if numVotes < 1 %}
+(no votes yet)
+{% endif %}
+
+{% if voteAverage > 80 %}
+<img src="/images/stars5.png" alt="five starts star">
+{% elseif voteAverage > 60 %}
+<img src="/images/stars4.png" alt="four star">
+{% elseif voteAverage > 45 %}
+<img src="/images/stars3.png" alt="three star">
+{% elseif voteAverage > 25 %}
+<img src="/images/stars2.png" alt="two star">
+{% elseif voteAverage > 10 %}
+<img src="/images/stars1.png" alt="one star">
+{% elseif voteAverage > 0 %}
+<img src="/images/starsHalf.png" alt="half star">
+{% endif %}

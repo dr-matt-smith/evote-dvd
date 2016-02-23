@@ -1,0 +1,25 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Home page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block indexLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<h1>
+Message submitted
+</h1>
+
+    <p>
+        thank you for your message:
+    </p>
+
+    <blockquote>
+        {{ message }}
+    </blockquote>
+
+
+{% endblock %}

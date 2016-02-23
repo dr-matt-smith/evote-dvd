@@ -59,20 +59,12 @@ class MainController
      */
     public function detailAction(\Twig_Environment $twig, $id)
     {
-        print 'hello';
-
         $dvdRepository = new DvdRepository();
         $dvd = $dvdRepository->getOneById($id);
 
         $argsArray = [
             'dvd' => $dvd,
         ];
-
-
-        print '<pre>';
-        print_r($dvd);
-        print '</pre>';
-        print '<hr>';
 
         $template = 'detail';
         $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
