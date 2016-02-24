@@ -23,13 +23,16 @@ $app->post('/processIndexMessageForm', \Itb\Utility::controller('Itb', 'message/
 
 // 404 - Page not found
 $app->error(function (\Exception $e, $code) use ($app) {
+
+    dump($code);
     switch ($code) {
         case 404:
             $message = 'The requested page could not be found.';
             return \Itb\MainController::error404($app, $message);
 
         default:
-            $message = 'We are sorry, but something went terribly wrong.';
+            $message = 'We are sorry, but something went terribly wrong.'
+                . '<p>' . $e->getMessage();
             return \Itb\MainController::error404($app, $message);
     }
 });

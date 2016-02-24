@@ -30,3 +30,12 @@ b6f744,127.0.0.1,GET,http://localhost:8888/sitemap?p=sitemap,1456245764,,200
 3ae698,127.0.0.1,POST,http://localhost:8888/processIndexMessageForm?p=processIndexMessageForm,1456246061,,200
 9561c0,127.0.0.1,GET,http://localhost:8888/,1456246064,,200
 337965,127.0.0.1,POST,http://localhost:8888/processIndexMessageForm?p=processIndexMessageForm,1456246067,,200
+cf7f75,::1,GET,http://localhost:8888/,1456316940,,200
+553c5e,::1,GET,http://localhost:8888/about?p=about,1456316942,,200
+83a9a9,::1,GET,http://localhost:8888/list?p=list,1456316943,,200
+59ec2a,::1,GET,http://localhost:8888/detail/1?p=detail%2F1,1456316944,,200
+f43853,::1,GET,http://localhost:8888/,1456316945,,200
+29a2e8,::1,POST,http://localhost:8888/processIndexMessageForm?p=processIndexMessageForm,1456316948,,200
+032211,::1,GET,http://localhost:8888/sdfsdf?p=sdfsdf,1456316952,,404
+06c9aa,::1,GET,http://localhost:8888/sdfsdf?p=sdfsdf,1456317076,,404
+7944b9,::1,GET,http://localhost:8888/docs-assets/ico/favicon.png?p=docs-assets%2Fico%2Ffavicon.png,1456337633,,404

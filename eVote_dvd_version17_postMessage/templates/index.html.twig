@@ -1,0 +1,47 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Home page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block indexLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<h1>
+Welcome to SmithIT Home Page
+</h1>
+
+<p>
+This site offers you the chance to VOTE on your favourite DVD films ...
+</p>
+
+<fieldset>
+    <legend>Send us a message to say hi!</legend>
+
+    <form
+            method="post"
+            action="?action=processMessageForm"
+    >
+
+        <p>
+            Your message:
+            <br>
+            <textarea name="text" cols="40" rows="5" required></textarea>
+        </p>
+
+        <p>
+            Your name:
+            <br>
+            <input type="text" name="user" required>
+        </p>
+
+        <p>
+            <input type="submit" value="send message">
+        </p>
+
+    </form>
+</fieldset>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Details for one DVD{% endblock %}
+
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<!-- start table for displaying DVD details -->
+<h2>Details of one DVD</h2>
+
+<dl>
+    <dt>Id</dt>
+    <dd>{{ dvd.id }}</dd>
+
+    <dt>Title</dt>
+    <dd>{{ dvd.title }}</dd>
+
+    <dt>Category</dt>
+    <dd>{{ dvd.category }}</dd>
+
+    <dt>Price</dt>
+    <dd>&euro; {{ dvd.price }}</dd>
+
+    <dt>Vote average</dt>
+    <dd>{{ dvd.voteAverage }} %</dd>
+
+    <dt>Num Votes</dt>
+    <dd>{{ dvd.numVotes }}</dd>
+
+    <dt>Stars for num votes</dt>
+    <dd>
+        {% include '_starImage.html.twig' with {'numVotes':dvd.numVotes, 'voteAverage':dvd.voteAverage} %}
+    </dd>
+</dl>
+
+
+{% endblock %}

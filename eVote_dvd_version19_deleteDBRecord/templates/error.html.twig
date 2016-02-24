@@ -1,0 +1,15 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    error page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+    <h1>Sorry, an error occurred</h1>
+    <p>
+        {{ errorMessage }}
+    </p>
+
+{% endblock %}

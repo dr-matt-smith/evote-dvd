@@ -5,8 +5,8 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 // create a log channel
-$log = new Logger('matt');
-$log->pushHandler(new StreamHandler('/Users/matt/Desktop/evote-dvd/zz_in_development_should_be_in_a_branch/eVote_dvd_version14_database/logs/log.txt', Logger::DEBUG));
+//$log = new Logger('matt');
+//$log->pushHandler(new StreamHandler('/Users/matt/Desktop/evote-dvd/zz_in_development_should_be_in_a_branch/eVote_dvd_version14_database/logs/log.txt', Logger::DEBUG));
 
 /*
 * found at: http://stackoverflow.com/questions/18723040/how-to-integrate-monolog-in-the-silex-webprofiler
@@ -17,6 +17,7 @@ return new DebugHandler($app['monolog.level']);
 }
 */
 
+/*
 // test loggin:
 
 // register monolog
@@ -25,3 +26,4 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 ));
 
 $app['monolog']->addDebug('Testing the Monolog logging.');
+*/
