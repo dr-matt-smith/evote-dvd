@@ -7,7 +7,7 @@ class ErrorController
     {
         $templateName = 'error';
         $argsArray = [
-            'errorMessage' => 'there was a problem adding your message to the database ...'
+            'errorMessage' => $erorrMessage
         ];
 
         $template = 'messages';
