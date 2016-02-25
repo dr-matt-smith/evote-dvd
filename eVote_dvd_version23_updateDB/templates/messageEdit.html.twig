@@ -1,0 +1,43 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}message edit page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<h1>
+Edit your message
+</h1>
+
+
+<fieldset>
+    <legend>Send us a message to say hi!</legend>
+
+    <form
+            method="post"
+            action="?action=processMessageUpdateForm"
+    >
+
+        <p>
+            Your message:
+            <br>
+            <textarea name="text" cols="40" rows="5" required >{{ message.text }}</textarea>
+        </p>
+
+        <p>
+            Your name:
+            <br>
+            <input type="text" name="user" required value="{{ message.user }}">
+        </p>
+
+        <input type="hidden" name="id" value="{{ message.id }}">
+
+        <p>
+            <input type="submit" value="update message">
+        </p>
+
+    </form>
+</fieldset>
+
+{% endblock %}

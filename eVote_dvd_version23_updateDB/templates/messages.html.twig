@@ -1,0 +1,43 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Messages page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block messagesLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<!-- start table for displaying DVD details -->
+<h2>Messages from people</h2>
+
+{% for message in messages %}
+    <hr>
+    <p>
+        posted by <strong>{{ message.user }}</strong>
+        <br>
+        {{ message.timestamp|date("l jS M h:i:s A")  }}
+    </p>
+
+    <blockquote>
+        {{ message.text }}
+    </blockquote>
+
+    <form
+        action="?action=deleteMessage&id={{ message.id }}"
+        method="post">
+        <input type="submit" value="(delete)">
+    </form>
+
+    <form
+            action="?action=editMessage&id={{ message.id }}"
+            method="post">
+        <input type="submit" value="(edit)">
+    </form>
+
+{% else %}
+    <p>(no messages found)</p>
+{% endfor %}
+
+{% endblock %}
