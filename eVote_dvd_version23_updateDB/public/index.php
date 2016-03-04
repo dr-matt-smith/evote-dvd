@@ -13,31 +13,44 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $mainController = new MainController();
 $messageController = new MessageController();
 
-if ('about' == $action){
-    $mainController->aboutAction($twig);
-} else if ('contact' == $action) {
-    $mainController->contactAction($twig);
-} else if ('list' == $action) {
-    $mainController->listAction($twig);
-} else if ('detail' == $action) {
-    $mainController->detailAction($twig,$id);
-} else if ('sitemap' == $action) {
-    $mainController->sitemapAction($twig);
-} else if ('filterList' == $action) {
-    $mainController->filterListAction($twig);
-} else if ('filterListTitleOrCategory' == $action) {
-    $mainController->filterListTitleorCategoryAction($twig);
-} else if ('messages' == $action) {
-    $messageController->messagesAction($twig);
-} else if ('processMessageForm' == $action) {
-    $messageController->submitAction($twig);
-} else if ('processMessageUpdateForm' == $action) {
-    $messageController->updateAction($twig);
-} else if ('editMessage' == $action) {
-    $messageController->messageEditAction($twig);
-} else if ('deleteMessage' == $action) {
-    $messageController->deleteAction($twig);
-} else {
-    // default is home page ('index' action)
-    $mainController->indexAction($twig);
+switch ($action){
+    case 'about':
+        $mainController->aboutAction($twig);
+        break;
+    case 'contact':
+        $mainController->contactAction($twig);
+        break;
+    case 'list':
+        $mainController->listAction($twig);
+        break;
+    case 'detail':
+        $mainController->detailAction($twig,$id);
+        break;
+    case 'sitemap':
+        $mainController->sitemapAction($twig);
+        break;
+    case 'filterList':
+        $mainController->filterListAction($twig);
+        break;
+    case 'filterListTitleOrCategory':
+        $mainController->filterListTitleorCategoryAction($twig);
+        break;
+    case 'messages':
+        $messageController->messagesAction($twig);
+        break;
+    case 'processMessageForm':
+        $messageController->submitAction($twig);
+        break;
+    case 'processMessageUpdateForm':
+        $messageController->updateAction($twig);
+        break;
+    case 'editMessage':
+        $messageController->messageEditAction($twig);
+        break;
+    case 'deleteMessage':
+        $messageController->deleteAction($twig);
+        break;
+    case 'index':
+    default:
+        $mainController->indexAction($twig);
 }
