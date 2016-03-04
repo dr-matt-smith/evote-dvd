@@ -17,12 +17,18 @@ class DatabaseTableRepository
         $db = new DatabaseManager();
         $connection = $db->getDbh();
 
-        $statement = $connection->prepare('SELECT * from ' . $this->tableName);
+        $sql = 'SELECT * from ' . $this->tableName;
+//          die($sql);
+
+        $statement = $connection->prepare($sql);
         $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
         $statement->execute();
 
         $objects = $statement->fetchAll();
-
+/*
+        $numObjects = count($objects);
+        die('num objects = ' . $numObjects);
+*/
         return $objects;
     }
 

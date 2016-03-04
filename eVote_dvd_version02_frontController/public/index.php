@@ -14,3 +14,20 @@ if ('about' == $action){
     // default is home page ('index' action)
     require_once __DIR__ . '/../templates/index.php';
 }
+
+switch($action){
+    case 'about':
+        require_once __DIR__ . '/../templates/about.php';
+        break;
+    case 'about':
+        require_once __DIR__ . '/../templates/about.php';
+        break;
+    case 'about':
+        require_once __DIR__ . '/../templates/about.php';
+        break;
+    case 'index':
+    default:
+        // default is home page ('index' action)
+        require_once __DIR__ . '/../templates/index.php';
+
+}

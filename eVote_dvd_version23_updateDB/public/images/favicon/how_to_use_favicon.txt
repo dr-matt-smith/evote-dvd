@@ -1,0 +1,17 @@
+
+
+
+W3C say:
+https://www.w3.org/2005/10/howto-favicon
+
+<link rel="icon" 
+      type="image/png" 
+      href="http://example.com/myicon.png">
+
+
+===
+
+older ref:
+<link href="/YOUR_PATH/favicon.ico" rel="icon" type="image/x-icon" />
+
+http://www.favicon.cc/

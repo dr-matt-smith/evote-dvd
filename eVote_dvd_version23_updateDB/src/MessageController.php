@@ -19,6 +19,22 @@ class MessageController
         print $htmlOutput;
     }
 
+    public function messagesAsJSONAction(\Twig_Environment $twig)
+    {
+//        $messageRepository = new MessageRepository();
+        $messageRepository = new DatabaseTableRepository('Message', 'messages');
+
+        $messages = $messageRepository->getAll();
+
+        $argsArray = [
+            'messages' => $messages,
+        ];
+
+        $template = 'messagesAsJSON';
+        $htmlOutput = $twig->render($template . '.json.twig', $argsArray);
+        print $htmlOutput;
+    }
+
 
     public function submitAction($twig)
     {
