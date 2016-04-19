@@ -15,9 +15,9 @@ $app = new Silex\Application();
 
 // register Twig with Silex
 // ------------
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
+$app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => $myTemplatesPath
-));
+]);
 
 //----- autoload any classes we are using ------
 require_once __DIR__ . '/setup_monolog.php';

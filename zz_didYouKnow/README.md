@@ -13,7 +13,7 @@ So let's explore creating a __toString() method to output HTML for a table row.
 
 NOTE - this is just to illustrate __toString() - not best practice
 -------------------------------------------------------
-do actually use this HTML output as a way to implement your 'views' (HTML outputs),
+don't actually use this HTML output as a way to implement your 'views' (HTML outputs),
 since such an approach would 'couple' our Dvd class with the desired HTML table row 'view'.
 
 But since we have Dvds and HTMl rows it makes for an easy example to write your first __toString() magic method.
